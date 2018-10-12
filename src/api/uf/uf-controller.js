@@ -7,7 +7,7 @@ class UfController {
     }
     
     try {
-      return reply.response(options).code(200)
+      return await reply.response(options).code(200)
     } catch(e) {
       return reply.response(e.error).code(e.statusCode)
     }
@@ -21,7 +21,7 @@ class UfController {
     }
     
     try {
-      return reply.response(options).code(200)
+      return await reply.response(options).code(200)
     } catch(e) {
       return reply.response(e.error).code(e.statusCode)
     }

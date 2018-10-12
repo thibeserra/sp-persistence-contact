@@ -13,7 +13,7 @@ const uf_routes = {
       config: {
         description: 'list all ufs',
         tags: ['api'],
-        handler: await controller.list
+        handler: controller.list
       }
     }, {
       method: 'GET',
@@ -21,7 +21,7 @@ const uf_routes = {
       config: {
         description: 'find uf by id',
         tags: ['api'],
-        handler: await controller.byId,
+        handler: controller.byId,
         validate: Validator.byId
       }
     }]);
