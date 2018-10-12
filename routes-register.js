@@ -5,8 +5,8 @@ const routes = {
   version: '1.0.0',
   register: async (server, options) => {
     dir.readFiles(`${__dirname}/src/api`, function(err, content, filename, next) {
-      console.log('registered route: ', filename);
       if(filename.includes('-routes.js')) {
+        console.log('registered route: ', filename);
         server.register(require(filename))
       }
       next(); 
