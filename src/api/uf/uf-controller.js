@@ -1,14 +1,11 @@
+const business = require('./uf-business.js')
 class UfController {
 
- async list(request, reply) {
-    const options = {
-      headers: request.headers,
-      payload: request.payload
-    }
-    
+  async list(request, reply) {
     try {
-      return await reply.response(options).code(200)
-    } catch(e) {
+      const result = await business.list();
+      return reply.response(result).code(200)
+    } catch (e) {
       return reply.response(e.error).code(e.statusCode)
     }
   }
@@ -19,10 +16,11 @@ class UfController {
       params: request.params,
       payload: request.payload
     }
-    
+
     try {
-      return await reply.response(options).code(200)
-    } catch(e) {
+      const result = await business.byId(options.params.id)
+      return await reply.response(result).code(200)
+    } catch (e) {
       return reply.response(e.error).code(e.statusCode)
     }
   }

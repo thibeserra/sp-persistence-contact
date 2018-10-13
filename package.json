@@ -19,6 +19,8 @@
   "dependencies": {
     "dotenv": "^6.1.0",
     "hapi": "^17.6.0",
-    "node-dir": "^0.1.17"
+    "mysql2": "^1.6.1",
+    "node-dir": "^0.1.17",
+    "sequelize": "^4.39.0"
   }
 }
